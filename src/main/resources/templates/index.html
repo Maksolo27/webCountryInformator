@@ -10,8 +10,11 @@
 </head>
 <body>
 <div>
+
+    <div>Название страны:</div>
         <div th:text="${country.name}">name</div>
-        <div th:text="${country.getCapital()}">govForm</div>
+    <div>Население:</div>
+        <div th:text="${country.getPopulation()}">govForm</div>
 
     </div>
 </div>
