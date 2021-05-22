@@ -15,7 +15,6 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @ToString
 public class Country {
-
     @Id
     private String code;
     @Column
