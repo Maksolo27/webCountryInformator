@@ -13,6 +13,19 @@
     <title>Countries</title>
 </head>
 <body>
+
+
+<div class="form_block">
+
+    <form action="#" th:action="@{/index}" th:method="post">
+        <label for="title_input">Title</label>
+        <input id="title_input" name="title" type="text" placeholder="Enter title" required>
+        <label for="text_input" id="text_label">Your note</label>
+        <textarea id="text_input" name="text" placeholder="Your text" required rows="1"></textarea>
+        <input type="submit" value="Add" class="input_submit">
+    </form>
+
+</div>
 <div>
     <button type="button" class="ui-icon-arrow-2-ne-sw">Название страны:</button>
     <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.name}">name</button>
