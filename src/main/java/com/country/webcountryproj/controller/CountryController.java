@@ -2,40 +2,40 @@ package com.country.webcountryproj.controller;
 
 import com.country.webcountryproj.Country;
 import com.country.webcountryproj.service.CountryServiceImpl;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/index")
-@RequiredArgsConstructor
 public class CountryController {
 
-    @Autowired
     private CountryServiceImpl countryService;
+    private Country currentCountry;
+
+    @Autowired
+    public CountryController(CountryServiceImpl countryService){
+        this.countryService = countryService;
+        this.currentCountry = countryService.getCountryByCode("AUS");
+    }
 
     @GetMapping()
     public String getCountry(Model model){
         System.out.println("get");
         Country country;
-        country = countryService.getCountryByCode(currCountry.getCode());
+        country = countryService.getCountryByCode(currentCountry.getCode());
         model.addAttribute("country", country);
         return "index";
     }
 
     @PostMapping()
     public String getCountryById(Country country){
-        currCountry = country;
+        currentCountry = country;
         return "redirect:/index";
     }
 
