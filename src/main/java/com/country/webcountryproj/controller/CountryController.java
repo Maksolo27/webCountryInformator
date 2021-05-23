@@ -2,8 +2,6 @@ package com.country.webcountryproj.controller;
 
 import com.country.webcountryproj.Country;
 import com.country.webcountryproj.service.CountryServiceImpl;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
