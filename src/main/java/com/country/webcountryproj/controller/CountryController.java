@@ -17,27 +17,26 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping()
+@RequestMapping("/index")
 @RequiredArgsConstructor
 public class CountryController {
 
     @Autowired
     private CountryServiceImpl countryService;
-    private Country currCountry;
 
-
-    @PostMapping("/inPindex")
-    public String postCountry(Country country){
-        currCountry = countryService.getCountryByCode(country.getCode());
+    @GetMapping()
+    public String getCountry(Model model){
+        System.out.println("get");
+        Country country;
+        country = countryService.getCountryByCode(currCountry.getCode());
+        model.addAttribute("country", country);
         return "index";
     }
 
-    @GetMapping("/index")
-    public String getCountry(Model model){
-        System.out.println("get");
-        Country country = countryService.getCountryByCode(currCountry.getCode());
-        model.addAttribute("country", country);
-        return "index";
+    @PostMapping()
+    public String getCountryById(Country country){
+        currCountry = country;
+        return "redirect:/index";
     }
 
 }

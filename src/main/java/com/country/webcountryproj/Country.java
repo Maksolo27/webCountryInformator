@@ -1,9 +1,6 @@
 package com.country.webcountryproj;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.ToString;
+import lombok.*;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.Column;
@@ -45,5 +42,9 @@ public class Country {
     private String capital;
     @Column
     private String code2;
+
+    public Country(String code){
+        this.code = code;
+    }
 
 }
