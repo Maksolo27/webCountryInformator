@@ -15,21 +15,35 @@
 <body>
 
 
-<div class="form_block">
+<div class="ui-icon-grip-solid-horizontal">
 
+    <hr>
     <form action="#" th:action="@{/index}" th:method="post">
         <label for="title_input">Title</label>
         <input id="title_input" name="code" type="text" placeholder="Enter title" required>
         <input type="submit" value="Input" class="input_submit">
     </form>
+    <hr>
 
 </div>
 <div>
-    <button type="button" class="ui-icon-arrow-2-ne-sw">Название страны:</button>
+    <button type="button" class="dropleft" >Название страны:</button>
     <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.name}">name</button>
     <hr>
     <button type="button" class="ui-icon-arrow-2-ne-sw">Население:</button>
-    <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getPopulation()}" >govForm</button>
+    <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getPopulation()}" >population</button>
+    <hr>
+    <button type="button" class="ui-icon-arrow-2-ne-sw">Континент:</button>
+    <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getContinent()}" >continent</button>
+    <hr>
+    <button type="button" class="ui-icon-arrow-2-ne-sw">ВВП:</button>
+    <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getGNP()}" >GNP</button>
+    <hr>
+    <button type="button" class="ui-icon-arrow-2-ne-sw">Форма правления:</button>
+    <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getGovernmentform()}" >GNP</button>
+    <hr>
+    <button type="button" class="ui-icon-arrow-2-ne-sw">Глава госсударства:</button>
+    <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getHeadofstate()}" >GNP</button>
 </div>
 
 </body>
