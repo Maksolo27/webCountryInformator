@@ -14,9 +14,9 @@ import java.util.Set;
 @NoArgsConstructor
 public class CountryLanguage {
 
-    @Column
-    private String countrycode;
     @Id
+    private String countrycode;
+    @Column
     private String language;
     @Column
     private String isofficial;
