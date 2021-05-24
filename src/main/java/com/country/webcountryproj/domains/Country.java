@@ -1,11 +1,10 @@
-package com.country.webcountryproj;
+package com.country.webcountryproj.domains;
 
 import lombok.*;
 import org.springframework.lang.Nullable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
