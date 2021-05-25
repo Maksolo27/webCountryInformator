@@ -27,6 +27,7 @@ public class CountryController {
     @GetMapping()
     public String getCountry(Model model, @RequestParam(required = false)String code){
         System.out.println("get");
+        System.out.println(code);
         Country country;
         if(code != null){
             country = countryService.getCountryByCode(code);
@@ -40,7 +41,7 @@ public class CountryController {
     @PostMapping()
     public String getCountryById(Country country){
         currentCountry = country;
-        return "redirect:/index";
+        return "redirect:/country";
     }
 
 }
