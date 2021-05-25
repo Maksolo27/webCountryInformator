@@ -18,7 +18,7 @@
 <div class="ui-icon-grip-solid-horizontal">
 
     <hr>
-    <form action="#" th:action="@{/index}" th:method="post">
+    <form action="#" th:action="@{/country}" th:method="post">
         <label for="title_input">Ввод</label>
         <input id="title_input" name="code" type="text" placeholder="Enter title" required>
         <input type="submit" value="Ввод" class="input_submit">
@@ -45,18 +45,6 @@
     <button type="button" class="ui-icon-arrow-2-ne-sw">Глава госсударства:</button>
     <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getHeadofstate()}" >GNP</button>
 
-    <table>
-        <tr>
-            <th>LANGUAGE</th>
-            <th>PERCENTAGE</th>
-            <th>ISOFFICIAL</th>
-        </tr>
-        <tr th:each="language : ${languageList}">
-            <td th:text="${language.language}">Onions</td>
-            <td th:text="${language.percentage}">2.41</td>
-            <td th:text="${language.isofficial.equals('T')}? #{true} : #{false}">yes</td>
-        </tr>
-    </table>
 </div>
 
 </body>

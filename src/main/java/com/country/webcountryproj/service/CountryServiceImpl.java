@@ -1,17 +1,9 @@
 package com.country.webcountryproj.service;
 
 import com.country.webcountryproj.domains.Country;
-import com.country.webcountryproj.domains.CountryLanguage;
 import com.country.webcountryproj.repository.CountryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class CountryServiceImpl implements CountryService {
