@@ -2,6 +2,7 @@ package com.country.webcountryproj.controller;
 
 import com.country.webcountryproj.domains.City;
 import com.country.webcountryproj.service.CityServiceImpl;
+import com.country.webcountryproj.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +18,12 @@ public class CityController {
 
     private CityServiceImpl cityService;
     private City currentCity;
-    private CountryController countryController;
+    private CountryService countryService;
 
     @Autowired
-    public CityController(CityServiceImpl cityService, CountryController countryController){
+    public CityController(CityServiceImpl cityService, CountryService countryService){
         this.cityService = cityService;
-        this.countryController = countryController;
+        this.countryService = countryService;
         this.currentCity = cityService.getCityByName("Haag");
     }
 
@@ -31,7 +32,8 @@ public class CityController {
         City city;
         city = cityService.getCityByName(currentCity.getName());
         System.out.println(city.getCountrycode());
-        model.addAttribute("code", city.getCountrycode());
+        String countryName = countryService.getCountryByCode(city.getCountrycode()).getName();
+        model.addAttribute("countryName", countryName);
         model.addAttribute("city", city);
         return "city";
     }

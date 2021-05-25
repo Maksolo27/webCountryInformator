@@ -28,7 +28,10 @@
 </div>
 <div>
   <button type="button" class="dropleft" >Название города:</button>
-  <a th:href="@{'/country?code=' + ${code}}"><button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${city.name}"></button></a>
+  <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${city.name}"></button>
+  <hr>
+  <button type="button" class="dropleft" >Страна:</button>
+  <a th:href="@{'/country?code=' + ${city.countrycode}}"><button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${countryName}"></button></a>
   <hr>
   <button type="button" class="ui-icon-arrow-2-ne-sw">Население:</button>
   <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${city.population}" >population</button>
