@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/city")
-
 public class CityController {
 
 
@@ -28,7 +27,7 @@ public class CityController {
     }
 
     @GetMapping()
-    public String getCountry(Model model){
+    public String getCity(Model model){
         City city;
         city = cityService.getCityByName(currentCity.getName());
         System.out.println(city.getCountrycode());
@@ -39,7 +38,7 @@ public class CityController {
     }
 
     @PostMapping()
-    public String getCountryById(City city){
+    public String getCityById(City city){
         currentCity = city;
         return "redirect:/city";
     }
