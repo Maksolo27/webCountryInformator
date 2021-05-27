@@ -44,8 +44,16 @@
     <hr>
     <button type="button" class="ui-icon-arrow-2-ne-sw">Глава госсударства:</button>
     <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${country.getHeadofstate()}" >GNP</button>
-
+    <br>
+    <hr>
 </div>
+
+    <div>
+        <a th:href="@{'/compare?firstCode=' + ${country.getCode()}}"><button type="button" class="ui-icon-arrow-2-ne-sw">Сравнить</button></a>
+    </div>
+
+
+
 
 </body>
 </html>

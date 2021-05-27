@@ -32,7 +32,7 @@
     <button type="button" class="ui-icon-arrow-2-ne-sw" th:text="${secondCountry.name}">name</button>
     <hr>
     <button type="button" class="ui-icon-arrow-2-ne-sw">Население:</button>
-    <button th:if="${firstCountry.getPopulation() >= secondCountry.getPopulation()}" type="button" class="alert-success" th:text="${firstCountry.getPopulation()}" >population</button>
+    <td th:if="${firstCountry.getPopulation() >= secondCountry.getPopulation()}" type="button" class="alert-success" th:text="${firstCountry.getPopulation()}" >population</td>
     <button th:if="${firstCountry.getPopulation() < secondCountry.getPopulation()}" type="button" class="alert-danger" th:text="${firstCountry.getPopulation()}" >population</button>
     <button th:if="${firstCountry.getPopulation() > secondCountry.getPopulation()}" type="button" class="alert-danger" th:text="${secondCountry.getPopulation()}" >population</button>
     <button th:if="${firstCountry.getPopulation() <= secondCountry.getPopulation()}" type="button" class="alert-success" th:text="${secondCountry.getPopulation()}" >population</button>
