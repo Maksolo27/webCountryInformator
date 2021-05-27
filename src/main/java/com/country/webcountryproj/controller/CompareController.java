@@ -25,7 +25,6 @@ public class CompareController {
 
     @GetMapping()
     public String getCompare(Model model, @RequestParam(required = false) String firstCode, @RequestParam(required = false) String secondCode){
-        System.out.println("get");
         Country firstCompareCountry, secondCompareCountry;
         if(firstCode == null){
             firstCompareCountry = countryService.getCountryByCode(firstCurrentCountry.getCode());
@@ -44,13 +43,8 @@ public class CompareController {
 
     @PostMapping
     public String setCompare(Country firstCountryWithCode, Country secondCountryWithCode){
-        System.out.println("post");
-        System.out.println(firstCountryWithCode);
-        System.out.println(secondCountryWithCode);
         firstCurrentCountry = countryService.getCountryByCode(parseCountryCode(firstCountryWithCode.getCode(), true));
-        System.out.println(firstCurrentCountry);
         secondCurrentCountry = countryService.getCountryByCode(parseCountryCode(secondCountryWithCode.getCode(), false));
-        System.out.println(secondCurrentCountry);
         return "redirect:/compare?firstCode=" + firstCurrentCountry.getCode() + "&secondCode=" + secondCurrentCountry.getCode();
     }
 

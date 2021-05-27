@@ -30,7 +30,6 @@ public class CityController {
     public String getCity(Model model){
         City city;
         city = cityService.getCityByName(currentCity.getName());
-        System.out.println(city.getCountrycode());
         String countryName = countryService.getCountryByCode(city.getCountrycode()).getName();
         model.addAttribute("countryName", countryName);
         model.addAttribute("city", city);

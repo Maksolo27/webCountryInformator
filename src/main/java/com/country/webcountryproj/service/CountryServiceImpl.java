@@ -17,24 +17,4 @@ public class CountryServiceImpl implements CountryService {
         return repository.getCountryByCode(code);
     }
 
-/*    @Override
-    public List<CountryLanguage> getCountryLanguages(String code) {
-        String queryString = "SELECT * FROM countrylanguage WHERE countrycode = " + code;
-        Query query = entityManager.createNativeQuery(queryString);
-        List resultList = query.getResultList();
-        List<CountryLanguage> languages = new ArrayList<>();
-        if (!resultList.isEmpty()) {
-            CountryLanguage countryLanguage = new CountryLanguage();
-            String countryCode = (String) resultList.get(0);
-            String language = (String) resultList.get(1);
-            boolean isOfficial = (boolean) resultList.get(2);
-            double percentage = (double) resultList.get(3);
-            countryLanguage.setCode(countryCode);
-            countryLanguage.setLanguage(language);
-            countryLanguage.setIsofficial(isOfficial);
-            countryLanguage.setPercentage(percentage);
-        }
-
-        return languages;
-    }*/
 }
