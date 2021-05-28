@@ -26,6 +26,7 @@ public class CityController {
         this.currentCity = cityService.getCityByName("Haag");
     }
 
+
     @GetMapping()
     public String getCity(Model model){
         City city;
