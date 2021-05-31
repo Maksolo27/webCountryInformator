@@ -21,6 +21,7 @@ public class CompareController {
         this.countryService = countryService;
         this.firstCurrentCountry = countryService.getCountryByCode("AUS");
         this.secondCurrentCountry = countryService.getCountryByCode("AGO");
+
     }
 
     @GetMapping()

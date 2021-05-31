@@ -24,6 +24,7 @@ public class CountryController {
         this.currentCountry = countryService.getCountryByCode("AUS");
     }
 
+
     @GetMapping()
     public String getCountry(Model model, @RequestParam(required = false)String code){
         Country country;

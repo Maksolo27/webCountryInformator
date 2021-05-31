@@ -23,7 +23,7 @@ public class CityController {
     public CityController(CityServiceImpl cityService, CountryService countryService){
         this.cityService = cityService;
         this.countryService = countryService;
-        this.currentCity = cityService.getCityByName("Haag");
+        this.currentCity = cityService.getCityByName("Amsterdam");
     }
 
 
@@ -41,6 +41,7 @@ public class CityController {
     public String getCityById(City city){
         currentCity = city;
         return "redirect:/city";
+
     }
 
 }
