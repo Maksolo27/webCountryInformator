@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/compare")
+
 public class CompareController {
 
     private CountryServiceImpl countryService;
